@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akash | Portfolio</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+    :root{
+      --bg-color:#f5f7fa;
+      --text-color:#333;
+      --card-bg:#fff;
+      --header-gradient:linear-gradient(45deg,#6a11cb,#2575fc);
+      --button-bg:#2575fc;
+      --button-hover:#6a11cb;
+      --footer-bg:#333;
+      --footer-text:#fff;
+    }
+    body.dark{
+      --bg-color:#1a1a1a;
+      --text-color:#f5f5f5;
+      --card-bg:#2a2a2a;
+      --header-gradient:linear-gradient(45deg,#0f2027,#203a43,#2c5364);
+      --button-bg:#444;
+      --button-hover:#666;
+      --footer-bg:#000;
+      --footer-text:#ccc;
+    }
+
+    body{
+      font-family:Arial,sans-serif;
+      background:var(--bg-color);
+      color:var(--text-color);
+      line-height:1.6;
+      text-align:center;
+      transition:background 0.3s,color 0.3s;
+    }
+
+    header{background:var(--header-gradient);color:white;padding:40px 20px;position:relative;}
+    header h1{font-size:2.5rem;}
+
+    .theme-toggle{position:absolute;top:15px;right:15px;background:var(--button-bg);color:white;border:none;padding:8px 15px;border-radius:8px;cursor:pointer;transition:0.3s;}
+    .theme-toggle:hover{background:var(--button-hover);}
+
+    nav{margin-top:15px;}
+    nav a{color:white;margin:0 15px;text-decoration:none;font-weight:bold;transition:0.3s;cursor:pointer;}
+    nav a:hover{color:yellow;}
+
+    .section{padding:60px 20px;max-width:900px;margin:auto;display:none;}
+    .active{display:block;}
+
+    h2{font-size:2rem;margin-bottom:20px;color:#2575fc;}
+    ul{list-style:disc;text-align:left;max-width:600px;margin:auto;padding-left:20px;}
+
+    .projects-container,.resume-container,.certificates-container{display:flex;justify-content:center;flex-wrap:wrap;gap:20px;}
+    .project-card,.resume-card,.certificate-card{background:var(--card-bg);border-radius:10px;padding:20px;box-shadow:0 4px 6px rgba(0,0,0,0.1);width:250px;transition:transform 0.3s,background 0.3s;}
+    .project-card:hover,.resume-card:hover,.certificate-card:hover{transform:translateY(-5px);}
+
+    .contact-card{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;}
+    form{display:flex;flex-direction:column;gap:10px;width:250px;}
+    input,textarea{padding:10px;border:1px solid #ccc;border-radius:8px;outline:none;background:var(--card-bg);color:var(--text-color);}
+    button{padding:10px;background:var(--button-bg);color:white;border:none;border-radius:8px;cursor:pointer;transition:0.3s;}
+    button:hover{background:var(--button-hover);}
+    .contact-info{text-align:left;}
+
+    footer{background:var(--footer-bg);color:var(--footer-text);padding:15px;margin-top:20px;}
+  </style>
+</head>
+<body>
+    <!-- Header / Home -->
+  <header>
+      <!-- Profile Photo -->
+  <img src="akash(0).jpg" alt="Akash Photo" class="profile-pic">
+
+<!-- Add this inside your <style> -->
+<style>
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 20px auto;
+    display: block;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+</style>
+    
+    <h1>Hi, I'm Akash 👋</h1>
+    <p>Web Developer | Java Programmer | Tech Enthusiast</p>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
+    <nav>
+      <a onclick="showSection('about')">About</a>
+      <a onclick="showSection('skills')">Skills</a>
+      <a onclick="showSection('education')">Education</a>
+      <a onclick="showSection('projects')">Projects</a>
+      <a onclick="showSection('resume')">Resume</a>
+      <a onclick="showSection('certificates')">Certificates</a>
+      <a onclick="showSection('contact')">Contact</a>
+    </nav>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="section active">
+    <h2>About Me</h2>
+    <ul>
+      <li>Hello! I'm Akash, a passionate web developer and Java programmer.</li>
+      <li>I enjoy building modern, user-friendly websites and applications.</li>
+      <li>My goal is to become a skilled software developer and work on impactful projects.</li>
+      <li>Apart from coding, I love playing action games, enjoying sports, and listening to music.</li>
+    </ul>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <p><b>Technical Skills:</b></p>
+    <ul>
+      <li>HTML, CSS, JavaScript</li>
+      <li>Java Programming</li>
+      <li>Web Development</li>
+      <li>Problem Solving</li>
+    </ul>
+    <p><b>Soft Skills:</b></p>
+    <ul>
+      <li>Communication</li>
+      <li>Teamwork</li>
+      <li>Creativity</li>
+    </ul>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="section">
+    <h2>Education</h2>
+    <ul>
+      <li><strong>SSLC:</strong> 10th 2021 <br> Municipal High School, Karuvampalayam, Tiruppur.</li>
+      <li><strong>HSC:</strong> 12th 2023 <br> Nanjappa Municipal Boys Higher Secondary School, Tiruppur.</li>
+      <li><strong>College:</strong> B.Sc (CS) 2024-2027 <br> Government Arts and Science College, Avinashi.</li>
+    </ul>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="projects-container">
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>A responsive portfolio showcasing my skills, education, and projects.</p>
+      </div>
+      
+        <h3></h3>
+        <p></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resume Section -->
+  <section id="resume" class="section">
+    <h2>Resume</h2>
+    <div class="resume-container">
+      <div class="resume-card">
+        <h3>Download My Resume</h3>
+        <p>Click below to view or download my resume.</p>
+        <button><a href="Resume.png"  target="_blank">View Resume</button>
+          
+        </a>
+      </div>
+    </div>
+  </section>
+
+<!-- Certificates Section -->
+<section id="certificates" class="section">
+  <h2>Certificates</h2>
+  <div class="certificates-container">
+
+    <!-- Certificate 1 -->
+    <div class="certificate-card">
+      <h3>Naan Muthalvan Certificate </h3>
+      <p>Overview Of English Communication.</p>
+      <a href="NM2.pdf" target="_blank">
+        <button>📄 View Certificate</button>
+      </a>
+    </div>
+      
+
+    <!-- Certificate 2 -->
+    <div class="certificate-card">
+      <h3>Naan Muthalvan Certificate - Java Programming</h3>
+      <p> Edunet-  Front  End  Web  Development </p>
+      <a href="NM.jpg"target="_blank">
+        <button>📄 View Certificate</button>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <div class="contact-card">
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="contact-info">
+        <p><b>Email:</b> akash062007@gmail.com</p>
+        <p><b>Phone:</b> +91 8668181682</p>
+        <p><b>Location:</b> Tiruppur, Tamil Nadu, India</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Akash. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Section switching
+    function showSection(id){
+      document.querySelectorAll('.section').forEach(sec=>sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    // Dark/Light Theme Toggle
+    function toggleTheme(){
+      document.body.classList.toggle('dark');
+      const btn=document.querySelector('.theme-toggle');
+      if(document.body.classList.contains('dark')){
+        btn.textContent="☀️ Light";
+      } else {
+        btn.textContent="🌙 Dark";
+      }
+    }
+  </script>
+</body>
+</html>
